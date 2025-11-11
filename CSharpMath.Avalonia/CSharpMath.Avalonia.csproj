@@ -5,13 +5,14 @@
     <Description>The Avalonia front end for CSharpMath (fork).</Description>
     <PackageTags>$(PackageTags) avalonia</PackageTags>
     <DefineConstants>$(DefineConstants) Avalonia</DefineConstants>
-    <PackageId>Artemis.CSharpMath.Avalonia</PackageId>
-    <Version>1.0.0</Version>
-    <Title>Artemis.CSharpMath.Avalonia</Title>
-    <Authors>Artemis Li and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
-    <Copyright>© CSharpMath Contributors 2020; © Artemis Li 2025</Copyright>
-    <PackageProjectUrl>https://github.com/AuroraZiling/CSharpMath.Avalonia</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/AuroraZiling/CSharpMath.Avalonia.git</RepositoryUrl>
+    <PackageId>Sylinko.CSharpMath.Avalonia</PackageId>
+    <Version>11.3.0</Version>
+    <AssemblyVersion>11.3.0</AssemblyVersion>
+    <Title>Sylinko.CSharpMath.Avalonia</Title>
+    <Authors>Artemis Li, Dear.Va and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
+    <Copyright>© CSharpMath Contributors 2020; © Sylinko 2025</Copyright>
+    <PackageProjectUrl>https://github.com/Sylinko/CSharpMath.Avalonia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sylinko/CSharpMath.Avalonia</RepositoryUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>

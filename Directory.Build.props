@@ -13,7 +13,7 @@
   <!--Don't apply to Typography projects-->
   <PropertyGroup Condition="$(MSBuildProjectName.StartsWith('CSharpMath'))">
     <!--CSharpMath-specific properties for centralized control of values-->
-    <AvaloniaVersion>11.2.0</AvaloniaVersion>
+    <AvaloniaVersion>[11.3.0,)</AvaloniaVersion>
 
     <!--C# code properties-->
     <LangVersion>preview</LangVersion>
@@ -82,7 +82,7 @@
   <!--Also run for non-CSharpMath projects: Normalize PackageVersion or else error-->
   <Target Name="SetDefaultPackageVersion">
     <!--Setting StandardOutputImportance to Low ensures that EchoOff works: https://github.com/Microsoft/msbuild/issues/2826-->
-    <Exec Command="git rev-parse HEAD" ConsoleToMSBuild="true" EchoOff="true" StandardOutputImportance="Low">
+    <Exec Command="git rev-parse HEAD" EchoOff="true" StandardOutputImportance="Low">
       <Output TaskParameter="ConsoleOutput" PropertyName="RepositoryCommit" />
     </Exec>
     <!--For local builds-->
