@@ -132,7 +132,7 @@ namespace CSharpMath {
             (MathItem)(
               left == right // MathS.Sets.Interval throws when both edges are equal
               ? leftClosed && rightClosed
-                ? new Set(MathS.Sets.Element(left))
+                ? new Set((Piece)left)
                 : MathS.Sets.Empty()
               : new Set(MathS.Sets.Interval(left, right).SetLeftClosed(leftClosed).SetRightClosed(rightClosed))
             )
@@ -249,7 +249,7 @@ namespace CSharpMath {
             v.Subscript.Clear();
             goto handleThis;
           case Atoms.Ordinary { Nucleus: "∞" }:
-            @this = new NumberEntity(AngouriMath.Core.Numerix.RealNumber.PositiveInfinity);
+            @this = new NumberEntity(AngouriMath.Core.Numerix.RealNumber.PositiveInfinity());
             goto handleThis;
           case Atoms.Ordinary { Nucleus: "∅" }:
             @this = MathS.Sets.Empty();

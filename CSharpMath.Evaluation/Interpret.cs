@@ -31,7 +31,7 @@ namespace CSharpMath {
             latex.AppendLaTeXHeader("Input", false).AppendLaTeX(left).Append("=").AppendLaTeX(right);
             var entity = left - right;
             var variables = AngouriMath.MathS.Utils.GetUniqueVariables(entity).FiniteSet();
-            if (variables.Count == 0)
+            if (!variables.Cast<object?>().Any())
               latex.AppendLaTeXHeader("Result").Append($@"\text{{{entity.Eval() == 0}}}");
             else {
               latex.AppendLaTeXHeader("Solutions");
@@ -48,7 +48,7 @@ namespace CSharpMath {
             case MathItem.Entity { Content: var entity }:
               latex.AppendLaTeXHeader("Simplified").AppendLaTeX(entity.Simplify());
               if (AngouriMath.MathS.CanBeEvaluated(entity))
-                latex.AppendLaTeXHeader($@"Value\ ({AngouriMath.MathS.Settings.DecimalPrecisionContext.Value.Precision}\ digits)").AppendLaTeX(entity.Eval());
+                latex.AppendLaTeXHeader($@"Value\ ({AngouriMath.MathS.Settings.PrecisionErrorCommon}\ digits)").AppendLaTeX(entity);
               else {
                 latex.AppendLaTeXHeader("Expanded").AppendLaTeX(entity.Expand());
                 latex.AppendLaTeXHeader("Factorized").AppendLaTeX(entity.Collapse());
