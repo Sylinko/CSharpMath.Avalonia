@@ -35,10 +35,10 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
-        file: .nupkgs/*
+        file: .nupkgs/Sylinko.*
         file_glob: true
         overwrite: true
     - name: Upload to NuGet
       run: | # We use double quotes to avoid shell globbing: https://github.com/NuGet/Home/issues/4393#issuecomment-667618120
         # Use --skip-duplicate since we want re-runs of this workflow to succeed in case of network issues
-        dotnet nuget push ".nupkgs/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json  --skip-duplicate
+        dotnet nuget push ".nupkgs/Sylinko.*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json  --skip-duplicate
